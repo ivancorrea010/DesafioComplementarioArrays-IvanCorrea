@@ -13,32 +13,32 @@ class Producto {
     }
 
     getIva(){
-        return this.precioIva = this.precio*1.21
+        return this.precioIva = this.precio*1.21;
         }
     
 }
 
-const arrayProductos = []
-const users = ['JUAN','IVAN']
+const arrayProductos = [];
+const users = ['JUAN','IVAN'];
 
-const masaTradicional = new Producto ('"Masa tradicional"',precioMasaTradicional)
-const masaZanahoria = new Producto ('"Masa de zanahoria"', precioMasaZanahoria)
-const masaCalabaza = new Producto ('"Masa de calabaza"', precioMasaCalabaza)
-const masaPapa = new Producto ('"Masa de papa"', precioMasaPapa)
-const quesoPuntaDeAgua = new Producto ('"Queso Punta de agua"', precioPuntadeAgua)
-const quesoBarraza = new Producto ('"Muzzarella Barraza',precioBarraza )
+const masaTradicional = new Producto ('"Masa tradicional"',precioMasaTradicional);
+const masaZanahoria = new Producto ('"Masa de zanahoria"', precioMasaZanahoria);
+const masaCalabaza = new Producto ('"Masa de calabaza"', precioMasaCalabaza);
+const masaPapa = new Producto ('"Masa de papa"', precioMasaPapa);
+const quesoPuntaDeAgua = new Producto ('"Queso Punta de agua"', precioPuntadeAgua);
+const quesoBarraza = new Producto ('"Muzzarella Barraza',precioBarraza);
 
-arrayProductos.push(masaTradicional,masaZanahoria,masaCalabaza,masaPapa,quesoPuntaDeAgua,quesoBarraza)
+arrayProductos.push(masaTradicional,masaZanahoria,masaCalabaza,masaPapa,quesoPuntaDeAgua,quesoBarraza);
 
 function saludar() {
    
-    let nombre = ''
+    let nombre = '';
    
     do { 
         
         if (nombre !== '') {
             alert('El nombre ya esta en uso, por favor ingresa un nombre diferente')
-        }
+        };
         
 
         nombre = prompt('Hola! Estás en PIDDA!, Ingresa un nombre de usuario para poder registrarte: ').toUpperCase();
@@ -47,7 +47,7 @@ function saludar() {
     } while (users.includes(nombre));
     
     users.push(nombre);
-    console.log(users)
+    console.log(users);
     
     alert('Hola '+nombre+'!, Bienvenido a PIDDA!, vamos a crear la pizza a tu medida.\nPresioná aceptar para elegir tus productos');
 
@@ -65,7 +65,7 @@ function masas(){
         case 1:
             {
                 alert('Seleccionaste "Masa Tradicional"');
-                return masaTradicional
+                return masaTradicional;
             }
         case 2:
             {
@@ -120,7 +120,7 @@ function resumenDePago(masa,queso) {
     
     let precioTotal = masa.getIva()+queso.getIva();
 
-    alert('Los productos que te llegarán para hacer tu pizza son:\n-'+masa.nombre+': $'+masa.precio+' + IVA = '+masa.getIva()+'\n-'+queso.nombre+': $'+queso.precio+'+ IVA = $'+queso.getIva()+'\n-Salsa de Tomate de regalo\n\nTu precio Total a pagar con IVA es de: $'+(precioTotal))
+    alert('Los productos que te llegarán para hacer tu pizza son:\n-'+masa.nombre+': $'+masa.precio+' + IVA = '+masa.getIva()+'\n-'+queso.nombre+': $'+queso.precio+'+ IVA = $'+queso.getIva()+'\n-Salsa de Tomate de regalo\n\nTu precio Total a pagar con IVA es de: $'+(precioTotal));
 
     let pagoTotal = Number(prompt('Tu monto a pagar con IVA es de: $'+precioTotal+'\nCon cuánto vas a abonar?'));
 
